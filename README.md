@@ -1,11 +1,11 @@
 # C002Notes
 
-## VPC
+## VPC https://aws.amazon.com/vpc/faqs/
 - VPC Cannot span multiple Region
 - VPC can span multiple Availability Zone (AZ) within a specific region
 - There is upto 5 VPC that can be created within a account
 - Logically isolated from outside and within a account
-- You cannot change the CIDR size (up or down) once VPC has been created
+- You can change the CIDR size (up or down) once VPC has been created
 
 ### Components of VPC
 - CIDR and IP Address (v4 & v6)
