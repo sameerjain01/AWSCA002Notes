@@ -31,8 +31,17 @@
 - Subnet has 1:N relationship with AZ (In a given AZ we can have multiple subnets)
 - Each Subnet must be associated with only ONE route table at any given point in time
 - Different subnet within a VPC CANNOT overlap
+- AWS reserves 5 address in each subnet (first 4 and last 1) e.g. 10.0.0.0/24 - 10.0.0.0,10.0.0.1,10.0.0.2, 10.0.0.3 and 10.0.0.255 are reserved
 
 ## Route Tables
 - In a VPC there is a limit of upto 200 route tables
 - in each route table you can add upto 50 route entries
 - A single route table may be attached to multiple Subnets
+
+
+## Security Group (SG)
+- Security Group are also referred as Virtual Firewall
+- SG are stateful
+- You can have upto 5 SG attached to a single EC2 instance
+- You can allow but cannot define DENY (hence stateful - logical deduction)
+- there is implicit DENY for any other roles
