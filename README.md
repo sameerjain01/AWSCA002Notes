@@ -12,6 +12,10 @@ Below are my notes while doing prep for AWS CAA-002 exams. All these notes are f
 - You CAN increase the VPC size
 - Largest VPC is 0.0.0.0/16
 - Smallest VPC is 0.0.0.0/28
+- Quota
+  - IPv4 CIDR block per VPC is 5
+  - IPv6 CIDR block per VPC is 1
+  
 
 #### Components of VPC
 - CIDR and IP Address (v4 & v6)
@@ -37,12 +41,17 @@ Below are my notes while doing prep for AWS CAA-002 exams. All these notes are f
 - Each Subnet must be associated with only ONE route table at any given point in time
 - Different subnet within a VPC CANNOT overlap
 - AWS reserves 5 address in each subnet (first 4 and last 1) e.g. 10.0.0.0/24 - 10.0.0.0,10.0.0.1,10.0.0.2, 10.0.0.3 and 10.0.0.255 are reserved
+- Quota for Subnets per VPC is 200
+
 
 ## Route Tables
 - In a VPC there is a limit of upto 200 route tables
 - in each route table you can add upto 50 route entries
 - A single route table may be attached to multiple Subnets
-
+- Quotas
+  - Routes tables per VPC - 200
+  - Routes per route table (non-propagated routes) - 500 )extendible upto 1000 however with bad performance)
+  - BGP advertozed routes per route table (propagated routes) - 100 (cannot be increased. 100 is hard limit)
 
 ## Security Group (SG)
 More Accurate Details can always be found at [AWS Security Group Official Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
@@ -84,4 +93,5 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - Inbound or Outbound rules per Security Group - 60
   - Security Group Per Network Interface
   
-  ## Network Access Control List or NACL
+## Network Access Control List or NACL
+
