@@ -1,5 +1,5 @@
 # C002Notes
-Below are my notes while doing prep for AWS CAA-002 exams. All these notes are from watching various courses (such as ACG, EduFin, Dojo etc). These notes are free to use, I just aggregated it one place for reference
+Below are my notes while doing prep for AWS CAA-002 exams. All these notes are from watching various courses (such as ACG, DolfinEd, Dojo, Udemy etc). These notes are free to use, I just aggregated it one place for reference
 
 
 
@@ -49,11 +49,13 @@ Below are my notes while doing prep for AWS CAA-002 exams. All these notes are f
 - SG are stateful
 - SG are directional and can only use allow rules only
 - You can have upto 5 SG attached to a single EC2 instance
+- A security group set of rules end with an implicit deny any
 - You can allow but cannot define DENY (hence stateful - logical deduction)
 - there is implicit DENY for any other roles
 - User cannot delete default security group
 - Security group are VPC resources (i.e. they do not span across VPC)
 - Same security group can be tied to multiple instances and multiple AZs
+- Subnet ID cannot be used as Source in Inbound Rules
 
 Assumption here is that VPC is still in default setting (nothing has changed in SG setting)
 - In Default Security Group
