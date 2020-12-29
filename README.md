@@ -7,6 +7,8 @@
 - Logically isolated from outside and within a account
 - You cannot change the CIDR size (up or down) of an existing CIDR
 - You CAN increase the VPC size
+- Largest VPC is 0.0.0.0/16
+- Smallest VPC is 0.0.0.0/28
 
 #### Components of VPC
 - CIDR and IP Address (v4 & v6)
@@ -48,6 +50,13 @@
 - User cannot delete default security group
 - Security group are VPC resources (i.e. they do not span across VPC)
 - Same security group can be tied to multiple instances and multiple AZs
-- In Default VPC
+
+Assumption here is that VPC is still in default setting (nothing has changed in SG setting)
+- In Default Security Group
   - All outbound traffic is allowed by default i.e., there ia an existing rule in SG Outbound tab which says all traffic (protocols) from all ports is allowed to hit 0.0.0.0/0
   - All incoming traffic (all ports and all protocols) from any device (EC2 or ENI etc) which is tied with same security group (default security group in this case) is allowed
+  - User cannot delete this SG
+- In Custom Security Group (not default)
+  - All outbound traffic is allowed by default i.e., there ia an existing rule in SG Outbound tab which says all traffic (protocols) from all ports is allowed to hit 0.0.0.0/0
+  - have no inbound rules - All inbound traffic is denied by default
+  - User can delete this SG once all dependencies are removed and this is not marked as default
