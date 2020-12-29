@@ -45,3 +45,9 @@
 - You can have upto 5 SG attached to a single EC2 instance
 - You can allow but cannot define DENY (hence stateful - logical deduction)
 - there is implicit DENY for any other roles
+- User cannot delete default security group
+- Security group are VPC resources (i.e. they do not span across VPC)
+- Same security group can be tied to multiple instances and multiple AZs
+- In Default VPC
+  - All outbound traffic is allowed by default i.e., there ia an existing rule in SG Outbound tab which says all traffic (protocols) from all ports is allowed to hit 0.0.0.0/0
+  - All incoming traffic (all ports and all protocols) from any device (EC2 or ENI etc) which is tied with same security group (default security group in this case) is allowed
