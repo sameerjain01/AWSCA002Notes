@@ -102,17 +102,23 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   
 
 ## NAT instance
+  - Can work with both Elastic IP Address and Public IP Address
   - Must be always in Public Subnet
   - Always turn off the Source destination check on the instance for the traffic (Outgoing from private subnet to internet & Incoming traffic from internet to private subnet)
   - AWS does not patch ot update the instance, you will need to perform updates. PLease allow port 80 SSH/RDP for admin activity
   - EC2 Instances in Public Subnet do NOT need to access the NAT Instance since they have direct access to internet by IGW and public IP address
+  - Not Horizantally scaled
   - NAT Instance SG must allow
     - inbound from Private Subnet or private subnet's Security Group as Source for port 80 and 443
     - outbound to 0.0.0.0/0 (internet) on Port 80 & 443
     - Traffic inboud from user own network on port 22 to administer
       - if you open this to 0.0.0.0/0 anyone in the world can access your NAT instance, thus a security risk 
-     
-  - 
+   
+## NAT Gateway
+  - AWS managed service
+  - Horizontally scalable and redundant
+  - ONLY works with Elastic IP address
+  - Cannot be assigned Security Group
   
 ## Misc
   - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
