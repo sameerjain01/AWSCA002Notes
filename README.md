@@ -142,5 +142,21 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - You can only have a single Peering connection between two VPC
   - There is limit of 50 active Peering and 25 pending peering connections within a VPC
 
+## Flow Log
+  - Used to capture information about IP traffic going to and from ENI (network interface) in your VPC
+  - Can be used to monitor log
+  - Can be created at three levels VPC, Subnet, and a network interface
+  - flow log is saved as flow record in the Amazon Cloud watch logs or Amazon S3
+  - It can take several minutes for log to start collecting
+  
+## DHCP Option Set
+  - You can use an on premise DNS for your AWS VPC environment
+  - You can NOT use Route53 as a DNS for your on-premise infrastructure
+  - The Dynamic Host Configuration Protocol (DHCP) provides a standard for passing config information to hosts on a TCP/IP network
+  - The third IP address in your SUbnet is used for DNS queries
+
+## EBS
+ Best place to read about [EBS usecases](https://aws.amazon.com/ebs/features/)
+  
 ## Misc
   - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
