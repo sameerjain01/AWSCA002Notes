@@ -1,7 +1,8 @@
 # C002Notes
 Below are my notes while doing prep for AWS CAA-002 exams. All these notes are from watching various courses (such as ACG, DolfinEd, Dojo, Udemy etc). These notes are free to use, I just aggregated it one place for reference
 
-For more accurate details I refer to AWS documentation
+For more accurate details I refer to AWS documentation 
+
 For AWS Quotaa best reference is [AWS official documentation](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html)
 
 
