@@ -45,6 +45,8 @@ Below are my notes while doing prep for AWS CAA-002 exams. All these notes are f
 
 
 ## Security Group (SG)
+More Accurate Details can always be found at [AWS Pages](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+
 - Security Group are also referred as Virtual Firewall
 - SG are stateful
 - SG are directional and can only use allow rules only
@@ -73,3 +75,5 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - However when Instance B send message they are never received on A
   The problem is never on outgoing side (i.e., there is likely NOT an issue with instance A) but there may be blocks within SG of A which may be preventing this communication
   or the NACL since they are on different Subnets
+  
+  ## Network Access Control List or NACL
