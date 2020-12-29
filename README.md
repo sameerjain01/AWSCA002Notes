@@ -121,19 +121,26 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - Cannot be assigned Security Group
   - Must always be created in a Public Subnet
   
+    #### Monitoring
+    The NAT Gateways has several monitoring on dashboard
+    - Count of Packets out to destination
+    - Count of Packets out to Source
+    - Count of Packet drops
+    - Count of Bytes out to destination
+    - Count of Bytes out to Source
+    - Count of Error port allocation
+    - Count of Active Connections
+    - Count of Connections Attempt
+    - Count of Connections Established
+    - Cound of Idle Timeouts
   
-  #### Monitoring
-  The NAT Gateways has several monitoring on dashboard
-  - Count of Packets out to destination
-  - Count of Packets out to Source
-  - Count of Packet drops
-  - Count of Bytes out to destination
-  - Count of Bytes out to Source
-  - Count of Error port allocation
-  - Count of Active Connections
-  - Count of Connections Attempt
-  - Count of Connections Established
-  - Cound of Idle Timeouts
-  
+## VPC Peering
+  - You cannot have overlapping CIDR blocks between two VPC that are being peered
+  - VPC Peering does not have transitive relationship
+  - Because VPC does not support transitive peering, the trasntive edge to edge computing is not allowed
+  - A placement group can span peered VPC
+  - You can only have a single Peering connection between two VPC
+  - There is limit of 50 active Peering and 25 pending peering connections within a VPC
+
 ## Misc
   - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
