@@ -100,7 +100,19 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - A default NACL (created when VPC is created) allows all traffic inbound and outbound
   - A Custom NACL (cretaed by user) DENIES all traffic inbound and outbound by explicit deny
   
-  
+
+## NAT instance
+  - Must be always in Public Subnet
+  - Always turn off the Source destination check on the instance for the traffic (Outgoing from private subnet to internet & Incoming traffic from internet to private subnet)
+  - AWS does not patch ot update the instance, you will need to perform updates. PLease allow port 80 SSH/RDP for admin activity
+  - EC2 Instances in Public Subnet do NOT need to access the NAT Instance since they have direct access to internet by IGW and public IP address
+  - NAT Instance SG must allow
+    - inbound from Private Subnet or private subnet's Security Group as Source for port 80 and 443
+    - outbound to 0.0.0.0/0 (internet) on Port 80 & 443
+    - Traffic inboud from user own network on port 22 to administer
+      - if you open this to 0.0.0.0/0 anyone in the world can access your NAT instance, thus a security risk 
+     
+  - 
   
 ## Misc
   - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
