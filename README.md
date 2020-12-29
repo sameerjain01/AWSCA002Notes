@@ -119,6 +119,21 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - Horizontally scalable and redundant
   - ONLY works with Elastic IP address
   - Cannot be assigned Security Group
+  - Must always be created in a Public Subnet
+  
+  
+  #### Monitoring
+  The NAT Gateways has several monitoring on dashboard
+  - Count of Packets out to destination
+  - Count of Packets out to Source
+  - Count of Packet drops
+  - Count of Bytes out to destination
+  - Count of Bytes out to Source
+  - Count of Error port allocation
+  - Count of Active Connections
+  - Count of Connections Attempt
+  - Count of Connections Established
+  - Cound of Idle Timeouts
   
 ## Misc
   - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
