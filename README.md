@@ -45,7 +45,7 @@ Below are my notes while doing prep for AWS CAA-002 exams. All these notes are f
 
 
 ## Security Group (SG)
-More Accurate Details can always be found at [AWS Pages](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
+More Accurate Details can always be found at [AWS Security Group Official Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html)
 
 - Security Group are also referred as Virtual Firewall
 - SG are stateful
@@ -58,6 +58,9 @@ More Accurate Details can always be found at [AWS Pages](https://docs.aws.amazon
 - Security group are VPC resources (i.e. they do not span across VPC)
 - Same security group can be tied to multiple instances and multiple AZs
 - Subnet ID cannot be used as Source in Inbound Rules
+- You can specify separate rules for inbound and outbound traffic.
+- Security group rules enable you to filter traffic based on protocols and port numbers.
+- When you create a new security group, it has no inbound rules. Therefore, no inbound traffic originating from another host to your instance is allowed until you add inbound rules to the security group.
 
 Assumption here is that VPC is still in default setting (nothing has changed in SG setting)
 - In Default Security Group
@@ -75,5 +78,10 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - However when Instance B send message they are never received on A
   The problem is never on outgoing side (i.e., there is likely NOT an issue with instance A) but there may be blocks within SG of A which may be preventing this communication
   or the NACL since they are on different Subnets
+  
+  #### [Security Group Quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html)
+  - VPC Security Group Per Regions - 2500
+  - Inbound or Outbound rules per Security Group - 60
+  - Security Group Per Network Interface
   
   ## Network Access Control List or NACL
