@@ -1,4 +1,7 @@
 # C002Notes
+Below are my notes while doing prep for AWS CAA-002 exams. All these notes are from watching various courses (such as ACG, EduFin, Dojo etc). These notes are free to use, I just aggregated it one place for reference
+
+
 
 ## VPC 
 - VPC Cannot span multiple Region
@@ -44,6 +47,7 @@
 ## Security Group (SG)
 - Security Group are also referred as Virtual Firewall
 - SG are stateful
+- SG are directional and can only use allow rules only
 - You can have upto 5 SG attached to a single EC2 instance
 - You can allow but cannot define DENY (hence stateful - logical deduction)
 - there is implicit DENY for any other roles
@@ -60,3 +64,10 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
   - All outbound traffic is allowed by default i.e., there ia an existing rule in SG Outbound tab which says all traffic (protocols) from all ports is allowed to hit 0.0.0.0/0
   - have no inbound rules - All inbound traffic is denied by default
   - User can delete this SG once all dependencies are removed and this is not marked as default
+  
+  example
+  Let say we have two EC2 instances in two different subnets tied with two different security group
+  - Instance A EC2 can send message to B successfully
+  - However when Instance B send message they are never received on A
+  The problem is never on outgoing side (i.e., there is likely NOT an issue with instance A) but there may be blocks within SG of A which may be preventing this communication
+  or the NACL since they are on different Subnets
