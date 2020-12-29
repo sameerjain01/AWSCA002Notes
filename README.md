@@ -99,3 +99,8 @@ Assumption here is that VPC is still in default setting (nothing has changed in 
 ## Network Access Control List or NACL
   - A default NACL (created when VPC is created) allows all traffic inbound and outbound
   - A Custom NACL (cretaed by user) DENIES all traffic inbound and outbound by explicit deny
+  
+  
+  
+## Misc
+  - Ephemeral port range is between 1024 - 65535, (any application (usually browser) that is requesting response can use this port)
